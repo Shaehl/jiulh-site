@@ -5,11 +5,19 @@ import "./styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AndcoolSystems",
+  title: "JIULH",
+  themeColor: "#0b5000",
+  openGraph: {
+    title: "JIULH",
+    description: "Определённо человек"
+    // url: ""
+    // site_name: ""
+    // image: ""
+  },
   icons: {
-    icon: '/static/andcool.jpg',
-    shortcut: '/static/andcool.jpg',
-    apple: '/static/andcool.jpg'
+    icon: '/static/jiulh.png',
+    shortcut: '/static/jiulh.png',
+    apple: '/static/jiulh.png'
   }
 };
 
@@ -19,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={inter.className}>{children}</body>
     </html>
   );
