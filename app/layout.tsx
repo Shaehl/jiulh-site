@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   themeColor: "#747b27",
   twitter: {
     "images": "https://jiulh-site.vercel.app/static/jiulh.png"
-  }
+  },
   openGraph: {
     title: "JIULH",
     description: "Определённо человек",
