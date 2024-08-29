@@ -7,19 +7,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "JIULH",
   themeColor: "#747b27",
-  twitter: {
-    "images": "https://jiulh-site.vercel.app/static/jiulh.png"
-  },
   openGraph: {
     title: "JIULH",
     description: "Определённо человек",
-    siteName: "jiulh-site",
-    url: "https://jiulh-site.vercel.app/"
+    url: "https://jiulh-site.vercel.app/",
+    images: "https://jiulh-site.vercel.app/static/jiulh.png"
   },
   icons: {
     icon: '/static/jiulh.png',
     shortcut: '/static/jiulh.png',
     apple: '/static/jiulh.png'
+  },
+  twitter: {
+    card: "summary"
   }
 };
 
