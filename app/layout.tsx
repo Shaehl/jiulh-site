@@ -6,13 +6,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "JIULH",
-  themeColor: "#0b5000",
+  themeColor: "#747b27",
   openGraph: {
     title: "JIULH",
-    description: "Определённо человек"
-    // url: ""
-    // site_name: ""
-    // image: ""
+    description: "Определённо человек",
+    siteName: "jiulh-site",
+    url: "https://jiulh-site.vercel.app/",
+    images: "https://jiulh-site.vercel.app/static/jiulh.png"
   },
   icons: {
     icon: '/static/jiulh.png',
