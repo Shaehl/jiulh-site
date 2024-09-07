@@ -19,17 +19,21 @@
 	box-sizing: border-box;
 }
 
-
-.animated{
-	animation: main_anim .8s cubic-bezier(.4,0,.2,1);
+.animated {
+	animation: main_anim .8s cubic-bezier(.4, 0, .2, 1);
+	max-width: 668px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
-.name{
+.name {
 	color: white;
 	margin: 0;
-	margin-top: 8%;
+	margin-top: 1rem;
 	font-size: 3rem;
-	font-weight: 450;
+	font-weight: 400;
+	z-index: 1;
 }
 
 .name_cont {
@@ -47,7 +51,7 @@
 .name_cont p {
 	display: flex;
 	flex-direction: row;
-    align-items: center;
+	align-items: center;
 	gap: 5px;
 	animation: show_blur .4s;
 }
@@ -62,95 +66,58 @@
 	}
 }
 
-.nicks{
+.nicks {
 	display: flex;
 	flex-direction: row;
-    align-items: center;
+	align-items: center;
 	box-sizing: border-box;
 	flex-wrap: wrap;
 }
 
-.hello{
+.hello {
 	text-align: left;
 }
 
-.social{
+.social {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.7rem;
 }
 
-.single svg{
+.single svg {
 	width: 34px;
 }
 
 
-.single{
+.single {
 	cursor: pointer;
-	border: 2px #5B5959 solid;
-	border-radius: 12px;
+	border: 2px #5b595957 solid;
+	border-radius: 10px;
 	display: flex;
 	align-items: center;
-    flex-direction: row;
-	padding: 0.7rem;
+	flex-direction: row;
+	padding: 0.6rem;
 	background-color: none;
-	transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+	transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.single:hover{
-	background-color:#191b1f;
-	transform: translateY(-0.5rem);
+.single:hover {
+	background-color: #5b595927;
+	transform: translateY(-0.5rem) scale(1.05);
 }
 
-.single span{
+.single span {
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
 }
 
-.main_tech{
-	color: #E2CC00;
-	text-shadow: 0px 0px 120px #E2CC00;
-}
-
-.stack{
-	width: 40%;
-	text-align: left;
-	margin-bottom: 3rem;
-}
-
-.tech{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 2rem;
-
-}
-
-.tech img{
-	width: 4rem;
-}
-
-.tech span{
-	margin-top: 5px;
-}
-
-.tech div{
-	display: flex;
-	flex-direction: column;
-    align-items: center;
-	width: 5rem;
-}
-
-.projects_txt{
-	color:#0cb8af;
-	text-shadow: 0px 0px 120px #0cb8af;
-}
-
-@keyframes main_anim{
+@keyframes main_anim {
 	0% {
 		opacity: 0;
 		filter: blur(5px);
 		transform: translateY(100px) scale(.9);
 	}
+
 	100% {
 		opacity: 1;
 		filter: blur(0);
@@ -160,14 +127,14 @@
 
 .avatar_front,
 .avatar_back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
 }
 
 .avatar_back {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 	box-shadow: #b6b6b6 0px 0px 99px 9px;
 	image-rendering: crisp-edges;
 	border-radius: 50%;
@@ -180,41 +147,50 @@
 }
 
 .avatar {
-    width: 15rem;
-    height: 15rem;
-    perspective: 1000px;
-    cursor: pointer;
+	width: 15rem;
+	height: 15rem;
+	perspective: 1000px;
+	cursor: pointer;
 	user-select: none;
 }
 
 .avatar_inner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s cubic-bezier(0.72, 0.55, 0.46, 1.33);
-    transform-style: preserve-3d;
-    position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s cubic-bezier(0.72, 0.55, 0.46, 1.33);
+	transform-style: preserve-3d;
+	position: relative;
 }
 
 .avatar.is_flipped .avatar_inner {
-    transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
-.avatar img{
+.avatar_front img {
 	width: 100%;
 	border-radius: 50%;
 }
 
-.avatar_back img, .avatar_back{
+.avatar_back img,
+.avatar_back {
 	border-radius: 0;
 	box-shadow: none;
 	filter: drop-shadow(0px 0px 10px #555555);
 }
 
-@media(max-width: 970px){
-	.nicks{
+.party_hat {
+	position: relative;
+	width: 9rem !important;
+	top: -6.3rem;
+	right: -3.6rem;
+}
+
+@media(max-width: 970px) {
+	.nicks {
 		flex-direction: column;
 	}
-	.name{
+
+	.name {
 		margin-top: 2rem;
 		font-size: 2.5rem;
 	}
@@ -223,10 +199,11 @@
 		margin-left: 0;
 	}
 
-	.stack{
+	.stack {
 		width: 80%;
 	}
-	.social{flex-direction: column;}
 
-	.single{justify-content: space-between;}
+	.single {
+		justify-content: space-between;
+	}
 }
