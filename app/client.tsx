@@ -14,16 +14,11 @@ interface Weather {
 }
 
 const getTime = (): string => {
-	return new Date().toLocaleString('ru-RU', {
-		hour: 'numeric',
-		minute: 'numeric',
-		hour12: false,
-		timeZone: 'Etc/GMT-3'
-	});
+	return
 }
 
 export default function Home({ birthdate }: { birthdate: Date }) {
-	const [time, set_time] = useState(getTime());
+	const [display_time, set_display_time] = useState("");
 	const [weather, setWeather] = useState<Weather>(null);
 
 	const now = new Date()
@@ -37,9 +32,17 @@ export default function Home({ birthdate }: { birthdate: Date }) {
 			}
 		}
 
-		setInterval(() => {
-			set_time(getTime())
-		}, 60000)
+		let tick = () => {
+			let now = new Date()
+			setTimeout(tick, (60 - now.getSeconds()) * 1000 + (1000 - now.getMilliseconds()))
+			set_display_time(now.toLocaleString('ru-RU', {
+				hour: 'numeric',
+				minute: 'numeric',
+				hour12: false,
+				timeZone: 'Etc/GMT-3'
+			}))
+		}
+		tick()
 
 		// мне похуй
 		axios.get('https://weather.andcool.ru/api?place=Yaroslavl&json=true').then((response) => {
@@ -85,7 +88,7 @@ export default function Home({ birthdate }: { birthdate: Date }) {
 							Я программист-любитель, если кратко.
 						</p>
 						<p>
-							<b>Локальное время:</b> <span>{time}</span> <span style={{ color: "grey", fontSize: ".9rem" }}>UTC+3</span>
+							<b>Локальное время:</b> <span>{display_time}</span> <span style={{ color: "grey", fontSize: ".9rem" }}>UTC+3</span>
 						</p>
 					</div>
 					<div className={styles.social}>
