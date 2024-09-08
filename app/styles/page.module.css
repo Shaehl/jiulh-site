@@ -5,6 +5,8 @@
 
 .header {
 	width: 100%;
+	padding: 2rem;
+	box-sizing: border-box;
 	flex: 1;
 	display: flex;
 	justify-content: center;
@@ -15,7 +17,6 @@
 .card {
 	position: relative;
 	width: 100%;
-	padding: 2rem;
 	box-sizing: border-box;
 }
 
@@ -79,8 +80,9 @@
 }
 
 .social {
-	display: flex;
+	display: inline-flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	gap: 0.7rem;
 }
 
