@@ -13,10 +13,6 @@ interface Weather {
 	"icon": string
 }
 
-const getTime = (): string => {
-	return
-}
-
 export default function Home({ birthdate }: { birthdate: Date }) {
 	const [display_time, set_display_time] = useState("");
 	const [weather, setWeather] = useState<Weather>(null);
@@ -32,9 +28,10 @@ export default function Home({ birthdate }: { birthdate: Date }) {
 			}
 		}
 
+		let tickTimeout: ReturnType<typeof setTimeout>
 		let tick = () => {
 			let now = new Date()
-			setTimeout(tick, (60 - now.getSeconds()) * 1000 + (1000 - now.getMilliseconds()))
+			tickTimeout = setTimeout(tick, (60 - now.getSeconds()) * 1000 + (1000 - now.getMilliseconds()))
 			set_display_time(now.toLocaleString('ru-RU', {
 				hour: 'numeric',
 				minute: 'numeric',
@@ -50,6 +47,10 @@ export default function Home({ birthdate }: { birthdate: Date }) {
 				setWeather(response.data as Weather);
 			}
 		});
+
+		return () => {
+			if (tickTimeout) clearTimeout(tickTimeout)
+		}
 	}, []);
 
 	return (
