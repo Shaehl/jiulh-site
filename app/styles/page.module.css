@@ -25,7 +25,6 @@
 	max-width: 668px;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
 }
 
 .name {
@@ -80,7 +79,7 @@
 }
 
 .social {
-	display: inline-flex;
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 0.7rem;
