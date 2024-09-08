@@ -23,7 +23,7 @@ const getTime = (): string => {
 }
 
 export default function Home({ birthdate }: { birthdate: Date }) {
-	const [time, set_time] = useState(getTime());
+	const [time, set_time] = useState(0);
 	const [weather, setWeather] = useState<Weather>(null);
 
 	const now = new Date()
