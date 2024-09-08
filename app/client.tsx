@@ -23,7 +23,7 @@ const getTime = (): string => {
 }
 
 export default function Home({ birthdate }: { birthdate: Date }) {
-	const [time, set_time] = useState("");
+	const [time, set_time] = useState(getTime());
 	const [weather, setWeather] = useState<Weather>(null);
 
 	const now = new Date()
@@ -36,10 +36,10 @@ export default function Home({ birthdate }: { birthdate: Date }) {
 				window.scrollTo(0, 0);
 			}
 		}
-		set_time(time);
+
 		setInterval(() => {
-			set_time(getTime());
-		}, 60000);
+			set_time(getTime())
+		}, 60000)
 
 		// мне похуй
 		axios.get('https://weather.andcool.ru/api?place=Yaroslavl&json=true').then((response) => {
