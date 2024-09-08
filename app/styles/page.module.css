@@ -205,6 +205,10 @@
 		width: 80%;
 	}
 
+	.social {
+		flex-direction: column;
+	}
+
 	.single {
 		justify-content: space-between;
 	}
